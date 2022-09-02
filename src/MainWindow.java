@@ -89,7 +89,8 @@ public class MainWindow {
 		mntmNewMenuItem_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Materia materia = new Materia("Engenharia de Software");
-				controlador.enviarMensagem("Titulo", "dd", materia);
+				// O retorno booleano abaixo representa o sucesso do envio da mensagem.
+				JOptionPane.showMessageDialog(null,controlador.enviarMensagem("Titulo", "Conteúdo", materia));
 			}
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_4);
@@ -97,7 +98,8 @@ public class MainWindow {
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Visualizar mensagem");
 		mntmNewMenuItem_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				controlador.lerMensagem(new Mensagem("Titulo", "Conteúdo", LocalDate.now()));
+				String mensagem[] = controlador.lerMensagem(new Mensagem("Titulo", "Conteúdo", LocalDate.now()));
+				JOptionPane.showMessageDialog(null, String.format("%s\n%s", mensagem[0], mensagem[1]));
 			}
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_2);
@@ -142,7 +144,7 @@ public class MainWindow {
 		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Visualizar histórico");
 		mntmNewMenuItem_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				controlador.historicoAluno(new Materia("Engenharia de Software"), new Aluno());
+				JOptionPane.showMessageDialog(null, controlador.historicoAluno(new Materia("Engenharia de Software"), new Aluno()));
 			}
 		});
 		mnNewMenu_2.add(mntmNewMenuItem_9);
