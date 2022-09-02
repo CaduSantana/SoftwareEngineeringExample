@@ -22,9 +22,6 @@ public class Controlador {
 		return 0;
 	}
 
-	public void mostrarAvaliacao(Avaliacao avaliacao) {
-
-	}
 
 	public Aluno getAlunoAtual() {
 		return alunoAtual;
@@ -63,8 +60,8 @@ public class Controlador {
 		
 	}
 
-	public boolean enviarMensagem(String string, Materia materia) {
-		materia.enviarMensagem(string);
+	public boolean enviarMensagem(String titulo, String conteudo, Materia materia) {
+		materia.enviarMensagem(titulo, conteudo);
 		
 		return true;
 	}

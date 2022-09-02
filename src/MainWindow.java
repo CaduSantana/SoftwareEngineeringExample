@@ -89,7 +89,7 @@ public class MainWindow {
 		mntmNewMenuItem_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Materia materia = new Materia("Engenharia de Software");
-				controlador.enviarMensagem("dd", materia);
+				controlador.enviarMensagem("Titulo", "dd", materia);
 			}
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_4);

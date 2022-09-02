@@ -6,10 +6,6 @@ public class Mensagem {
 
 	private LocalDate dataEnvio;
 
-	public void criar(char conteudo) {
-
-	}
-
 	public String getConteudo() {
 		return conteudo;
 	}

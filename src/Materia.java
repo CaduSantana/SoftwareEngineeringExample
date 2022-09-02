@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Materia {
-
 	private String nome;
 	private String competencias[];
 	private float pesos[];
@@ -34,10 +33,8 @@ public class Materia {
 		return true;
 	}
 
-	public void enviarMensagem(String string) {
-		// TODO Auto-generated method stub
-		mensagens.add(new Mensagem(string, LocalDate.now()));
-		
+	public boolean enviarMensagem(String titulo, String conteudo) {
+		return mensagens.add(new Mensagem(titulo, conteudo, LocalDate.now()));
 	}
 	
 //	public ArrayList<Aula> aulasComAluno(Aluno aluno) {

@@ -2,20 +2,21 @@ import java.util.ArrayList;
 
 public class Usuario {
 
-	private char nome;
+	private String nome;
 
-	private char endereco;
+	private String endereco;
 
-	public boolean login(char email, char senha) {
+	public boolean login(String email, String senha) {
 		return false;
 	}
 
-	public ArrayList getHistorico(Materia materia) {
-		return null;
-	}
-	
 	public Usuario() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public Usuario(String nome, String endereco) {
+		this.nome = nome;
+		this.endereco = endereco;
 	}
 
 	

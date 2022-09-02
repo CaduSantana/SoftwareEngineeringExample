@@ -23,8 +23,9 @@ public class Aula {
 
 	}
 
-	public void criarAvaliacao(float[] notas, Aluno aluno) {
+	public boolean criarAvaliacao(float[] notas, Aluno aluno) {
 		avaliacoes.put(aluno, new Avaliacao(notas));
+		return true;
 	}
 	
 	public Avaliacao avaliacaoAluno(Aluno aluno){
