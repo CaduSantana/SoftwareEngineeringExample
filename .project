@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>GUI_ES</name>
@@ -23,29 +22,3 @@
 		</link>
 	</linkedResources>
 </projectDescription>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<projectDescription>
-	<name>GUI_ES</name>
-	<comment></comment>
-	<projects>
-	</projects>
-	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
-	<natures>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-	</natures>
-	<linkedResources>
-		<link>
-			<name>Classes</name>
-			<type>2</type>
-			<location>C:/Users/CarlosEduardoFernand/Desktop/New Folder/Classes</location>
-		</link>
-	</linkedResources>
-</projectDescription>
->>>>>>> eecfe0b5bf35130e0ac3ed5279b36aada0823ef9
