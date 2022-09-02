@@ -147,10 +147,6 @@ public class MainWindow {
 		});
 		mnNewMenu_2.add(mntmNewMenuItem_9);
 		
-//		Login loginGUI = new Login();
-//		loginGUI.setLocationRelativeTo(loginGUI);
-//		loginGUI.setAlwaysOnTop(true);
-////		frmSistema.setVisible(true);
 	}
 
 }
