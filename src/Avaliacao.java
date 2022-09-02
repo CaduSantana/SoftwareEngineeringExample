@@ -4,7 +4,7 @@ public class Avaliacao {
 	private boolean estaConcretizado;
 
 	public void concretizar() {
-
+		this.estaConcretizado = true;
 	}
 
 	public void corrigir(int notas) {

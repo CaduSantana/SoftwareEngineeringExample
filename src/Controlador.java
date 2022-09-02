@@ -89,4 +89,9 @@ public class Controlador {
 		
 	}
 
+	public void concretizarAvaliacao(Avaliacao avaliacao) {
+		avaliacao.concretizar();
+		
+	}
+
 }

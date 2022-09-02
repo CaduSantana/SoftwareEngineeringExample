@@ -59,7 +59,8 @@ public class MainWindow {
 		JMenuItem mntmNewMenuItem = new JMenuItem("Aluno");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, controlador.getAlunoAtual());
+				// TODO Aluno seria cadastrado no banco de dados, mas isso não deve ser definido nesta etapa do projeto.
+				JOptionPane.showMessageDialog(null, new Aluno());
 
 			}
 		});
@@ -68,8 +69,7 @@ public class MainWindow {
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Avaliação");
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				controlador.adicionarAvaliacao(new Aula(LocalDate.now(), 80), new Aluno(), new float[]{5});
-			
+				JOptionPane.showMessageDialog(null,controlador.adicionarAvaliacao(new Aula(LocalDate.now(), 80), new Aluno(), new float[]{5}));
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem_1);
@@ -77,7 +77,7 @@ public class MainWindow {
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Professor");
 		mntmNewMenuItem_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, controlador.getUsuarioAtual());
+				JOptionPane.showMessageDialog(null, new Professor(LocalDate.now()));
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem_3);
@@ -122,8 +122,10 @@ public class MainWindow {
 		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Concretizar avaliação");
 		mntmNewMenuItem_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Materia materia = new Materia("Engenharia de Software");
-//				materia.getAulas();
+				// TODO Aqui teria uma lista de materias, mas a implementação de lógica de View não faz parte do escopo desta fase do projeto.
+				// Presume-se que a instância de Materia é conhecida.
+				
+				controlador.concretizarAvaliacao(new Avaliacao(new float[]{5}));
 				
 			}
 		});
