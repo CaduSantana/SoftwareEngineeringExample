@@ -94,4 +94,9 @@ public class Controlador {
 		
 	}
 
+	public boolean corrigirAvaliacao(Aula aula, Aluno aluno, float[] notas) {
+		return aula.corrigirAvaliacao(notas, aluno);
+		
+	}
+
 }

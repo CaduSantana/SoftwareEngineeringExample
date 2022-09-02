@@ -116,7 +116,12 @@ public class MainWindow {
 		});
 		mnNewMenu_2.add(mntmNewMenuItem_5);
 		
-		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Editar avaliação");
+		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Corrigir avaliação");
+		mntmNewMenuItem_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, controlador.corrigirAvaliacao(new Aula(LocalDate.now(), 100), new Aluno(), new float[] {5}));
+			}
+		});
 		mnNewMenu_2.add(mntmNewMenuItem_6);
 		
 		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Concretizar avaliação");
@@ -126,7 +131,7 @@ public class MainWindow {
 				// Presume-se que a instância de Materia é conhecida.
 				
 				controlador.concretizarAvaliacao(new Avaliacao(new float[]{5}));
-				
+				JOptionPane.showMessageDialog(null, "Ok");
 			}
 		});
 		mnNewMenu_2.add(mntmNewMenuItem_7);

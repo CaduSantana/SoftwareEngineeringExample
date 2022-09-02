@@ -15,12 +15,9 @@ public class Aula {
 		this.avaliacoes = new LinkedHashMap<Aluno, Avaliacao>();
 	}
 
-	public void concretizarAvaliacao(Aluno aluno) {
-
-	}
-
-	public void corrigirAvaliacao(int notas, Aluno aluno) {
-
+	public boolean corrigirAvaliacao(float notas[], Aluno aluno) {
+		avaliacoes.replace(aluno, new Avaliacao(notas));
+		return true;
 	}
 
 	public boolean criarAvaliacao(float[] notas, Aluno aluno) {
