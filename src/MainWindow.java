@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
-import java.util.Date;
 import java.awt.event.ActionEvent;
 
 public class MainWindow {
@@ -69,7 +68,8 @@ public class MainWindow {
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Avaliação");
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, controlador.getAvAtual());
+				controlador.adicionarAvaliacao(new Aula(LocalDate.now(), 80), new Aluno(), new float[]{5});
+			
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem_1);
@@ -85,8 +85,22 @@ public class MainWindow {
 		JMenu mnNewMenu_1 = new JMenu("Contato");
 		menuBar.add(mnNewMenu_1);
 		
-		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Chat");
+		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Mandar mensagem");
+		mntmNewMenuItem_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Materia materia = new Materia("Engenharia de Software");
+				controlador.enviarMensagem("dd", materia);
+			}
+		});
 		mnNewMenu_1.add(mntmNewMenuItem_4);
+		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Visualizar mensagem");
+		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.lerMensagem(new Mensagem("Titulo", "Conteúdo", LocalDate.now()));
+			}
+		});
+		mnNewMenu_1.add(mntmNewMenuItem_2);
 		
 		JMenu mnNewMenu_2 = new JMenu("Atividades");
 		menuBar.add(mnNewMenu_2);
@@ -106,17 +120,22 @@ public class MainWindow {
 		mnNewMenu_2.add(mntmNewMenuItem_6);
 		
 		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Concretizar avaliação");
+		mntmNewMenuItem_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Materia materia = new Materia("Engenharia de Software");
+//				materia.getAulas();
+				
+			}
+		});
 		mnNewMenu_2.add(mntmNewMenuItem_7);
 		
 		JMenuItem mntmNewMenuItem_8 = new JMenuItem("Estimar progressão de aluno");
 		mnNewMenu_2.add(mntmNewMenuItem_8);
 		
-		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Visualizar históricos");
+		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Visualizar histórico");
 		mntmNewMenuItem_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, controlador.getAlunoAtual().getHistorico());
-
-				
+				controlador.historicoAluno(new Materia("Engenharia de Software"), new Aluno());
 			}
 		});
 		mnNewMenu_2.add(mntmNewMenuItem_9);

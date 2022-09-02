@@ -5,9 +5,9 @@ public class Aluno extends Usuario {
 
 	private Date data_nascimento;
 
-	public ArrayList getHistorico() {
-		ArrayList<Integer> notas = new ArrayList<Integer>(); // Create an ArrayList object
-		return notas;
+	public ArrayList resgatarHistorico(Materia materia) {
+		ArrayList<Avaliacao> avaliacoes = new ArrayList<Avaliacao>(); // Create an ArrayList object
+		return avaliacoes;
 	}
 	
 	public Aluno() {

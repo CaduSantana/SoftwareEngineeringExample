@@ -1,7 +1,8 @@
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Controlador {
 	private Aluno alunoAtual;
@@ -14,7 +15,7 @@ public class Controlador {
 		this.setAlunoAtual(new Aluno());
 		this.usuarioAtual = new Usuario();
 //		this.aulaAtual = new Aula();
-		this.avAtual = new Avaliacao();
+//		this.avAtual = new Avaliacao();
 	}
 	
 	public float estimarProgressao(ArrayList historico) {
@@ -49,16 +50,45 @@ public class Controlador {
 //		this.aulaAtual = aulaAtual;
 //	}
 
-	public Avaliacao getAvAtual() {
-		return avAtual;
-	}
-
-	public void setAvAtual(Avaliacao avAtual) {
-		this.avAtual = avAtual;
-	}
-	
+//	public Avaliacao getAvAtual() {
+//		return avAtual;
+//	}
+//
+//	public void setAvAtual(Avaliacao avAtual) {
+//		this.avAtual = avAtual;
+//	}
+//	
 	public boolean agendarAula(LocalDate localDate, int minutosAula, Materia materia) {
 		return materia.agendarAula(localDate, minutosAula);
+		
+	}
+
+	public boolean enviarMensagem(String string, Materia materia) {
+		materia.enviarMensagem(string);
+		
+		return true;
+	}
+	
+	public boolean adicionarAvaliacao(Aula aula, Aluno aluno, float notas[]) {
+		aula.criarAvaliacao(notas, aluno);
+		 return true;
+	}
+
+	public ArrayList<Avaliacao> historicoAluno(Materia materia, Aluno aluno) {
+		return materia.avaliacoesAluno(aluno);
+	}
+	
+	public Map<Aluno, ArrayList<Avaliacao>> historicosAlunoMateria(Materia materia){
+		Map<Aluno, ArrayList<Avaliacao>> historicos = new HashMap<Aluno, ArrayList<Avaliacao>>();
+		for (Aluno aluno : materia.getAlunos()) {
+			historicos.put(aluno, materia.avaliacoesAluno(aluno));
+		}
+		
+		return historicos;
+	}
+
+	public String[] lerMensagem(Mensagem mensagem) {
+		return new String[] {mensagem.getTitulo(), mensagem.getConteudo()};
 		
 	}
 

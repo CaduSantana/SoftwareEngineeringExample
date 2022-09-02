@@ -1,5 +1,6 @@
 
 public class Avaliacao {
+	private float notas[];
 
 	public void concretizar() {
 
@@ -13,4 +14,10 @@ public class Avaliacao {
 
 	}
 
+	public Avaliacao(float[] notas) {
+		this.notas = notas;
+	}
+
+	
+	
 }

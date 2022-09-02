@@ -1,17 +1,45 @@
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Mensagem {
+	private String titulo;
+	private String conteudo;
 
-	private char conteudo;
-
-	private Date data_envio;
+	private LocalDate dataEnvio;
 
 	public void criar(char conteudo) {
 
 	}
 
-	public char getConteudo() {
-		return 0;
+	public String getConteudo() {
+		return conteudo;
 	}
+
+	public Mensagem(String titulo, String conteudo, LocalDate dataEnvio) {
+		this.titulo = titulo;
+		this.conteudo = conteudo;
+		this.dataEnvio = dataEnvio;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public LocalDate getDataEnvio() {
+		return dataEnvio;
+	}
+
+	public void setDataEnvio(LocalDate dataEnvio) {
+		this.dataEnvio = dataEnvio;
+	}
+
+	public void setConteudo(String conteudo) {
+		this.conteudo = conteudo;
+	}
+	
+	
 
 }
