@@ -35,7 +35,4 @@ public class Mensagem {
 	public void setConteudo(String conteudo) {
 		this.conteudo = conteudo;
 	}
-	
-	
-
 }
