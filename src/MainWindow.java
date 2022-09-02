@@ -8,11 +8,15 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 
 public class MainWindow {
 
 	private JFrame frmSistema;
+	private Controlador controlador;
+
 
 	/**
 	 * Launch the application.
@@ -21,7 +25,7 @@ public class MainWindow {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainWindow window = new MainWindow();
+					MainWindow window = new MainWindow(new Controlador());
 					window.frmSistema.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,14 +37,14 @@ public class MainWindow {
 	/**
 	 * Create the application.
 	 */
-	public MainWindow() {
-		initialize();
+	public MainWindow(Controlador controlador) {
+		initialize(controlador);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(Controlador controlador) {
 		frmSistema = new JFrame();
 		frmSistema.setTitle("Sistema");
 		frmSistema.setBounds(100, 100, 450, 300);
@@ -56,28 +60,16 @@ public class MainWindow {
 		JMenuItem mntmNewMenuItem = new JMenuItem("Aluno");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Controlador controlCadastro = new Controlador();
-				JOptionPane.showMessageDialog(null, controlCadastro.getAlunoAtual());
+				JOptionPane.showMessageDialog(null, controlador.getAlunoAtual());
 
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem);
 		
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Aula");
-		mntmNewMenuItem_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Controlador controlCadastro = new Controlador();
-				JOptionPane.showMessageDialog(null, controlCadastro.getAulaAtual());
-
-			}
-		});
-		mnNewMenu.add(mntmNewMenuItem_2);
-		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Avaliação");
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Controlador controlCadastro = new Controlador();
-				JOptionPane.showMessageDialog(null, controlCadastro.getAvAtual());
+				JOptionPane.showMessageDialog(null, controlador.getAvAtual());
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem_1);
@@ -85,8 +77,7 @@ public class MainWindow {
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Professor");
 		mntmNewMenuItem_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Controlador controlCadastro = new Controlador();
-				JOptionPane.showMessageDialog(null, controlCadastro.getUsuarioAtual());
+				JOptionPane.showMessageDialog(null, controlador.getUsuarioAtual());
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem_3);
@@ -101,6 +92,14 @@ public class MainWindow {
 		menuBar.add(mnNewMenu_2);
 		
 		JMenuItem mntmNewMenuItem_5 = new JMenuItem("Agendar aula");
+		mntmNewMenuItem_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, controlador.agendarAula(LocalDate.now(),
+						120, 
+						new Materia("Engenharia de Software")));
+
+			}
+		});
 		mnNewMenu_2.add(mntmNewMenuItem_5);
 		
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Editar avaliação");
@@ -115,13 +114,17 @@ public class MainWindow {
 		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Visualizar históricos");
 		mntmNewMenuItem_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Controlador controlHistorico = new Controlador();
-				JOptionPane.showMessageDialog(null, controlHistorico.getAlunoAtual().getHistorico());
+				JOptionPane.showMessageDialog(null, controlador.getAlunoAtual().getHistorico());
 
 				
 			}
 		});
 		mnNewMenu_2.add(mntmNewMenuItem_9);
+		
+//		Login loginGUI = new Login();
+//		loginGUI.setLocationRelativeTo(loginGUI);
+//		loginGUI.setAlwaysOnTop(true);
+////		frmSistema.setVisible(true);
 	}
 
 }

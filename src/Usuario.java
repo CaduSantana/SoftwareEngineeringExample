@@ -18,4 +18,6 @@ public class Usuario {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	
 }

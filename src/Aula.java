@@ -1,13 +1,15 @@
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Aula {
 
-	private Date data_aula;
+	private LocalDate data_aula;
 
 	private int duracao;
 
-	public void criar(Date data_aula, int duracao) {
-
+	public Aula(LocalDate localDate, int duracao) {
+		this.data_aula = localDate;
+		this.duracao = duracao;
 	}
 
 	public void concretizarAvaliacao(Aluno aluno) {
