@@ -1,16 +1,17 @@
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Mensagem {
 	private String titulo;
 	private String conteudo;
 
-	private LocalDate dataEnvio;
+	private Date dataEnvio;
 
 	public String getConteudo() {
 		return conteudo;
 	}
 
-	public Mensagem(String titulo, String conteudo, LocalDate dataEnvio) {
+	public Mensagem(String titulo, String conteudo, Date dataEnvio) {
 		this.titulo = titulo;
 		this.conteudo = conteudo;
 		this.dataEnvio = dataEnvio;
@@ -24,15 +25,18 @@ public class Mensagem {
 		this.titulo = titulo;
 	}
 
-	public LocalDate getDataEnvio() {
+	public Date getDataEnvio() {
 		return dataEnvio;
 	}
 
-	public void setDataEnvio(LocalDate dataEnvio) {
+	public void setDataEnvio(Date dataEnvio) {
 		this.dataEnvio = dataEnvio;
 	}
 
 	public void setConteudo(String conteudo) {
 		this.conteudo = conteudo;
 	}
+	
+	
+
 }

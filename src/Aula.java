@@ -24,10 +24,10 @@ public class Aula {
 		avaliacoes.put(aluno, new Avaliacao(notas));
 		return true;
 	}
-
-	public Avaliacao avaliacaoAluno(Aluno aluno) {
+	
+	public Avaliacao avaliacaoAluno(Aluno aluno){
 		return this.avaliacoes.get(aluno); // TODO Haverá verificação para aluno não presente.
-
+		
 	}
 
 }

@@ -1,17 +1,11 @@
-import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class Aluno extends Usuario {
-	// LocalDate -> Data, sem horário e sem timezone
-	// Apenas o necessário para representar uma data de nascimento
-	private LocalDate data_nascimento;
 
 	public Aluno() {
-		// Construtor vazio, útil para testar métodos que utilizam uma instância de
-		// Aluno
+		super();
 	}
 
-	public Aluno(LocalDate data_nascimento) {
-		super();
-		this.data_nascimento = data_nascimento;
-	}
+	
 }
